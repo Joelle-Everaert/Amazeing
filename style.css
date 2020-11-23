@@ -1,0 +1,47 @@
+.mur {
+    background-color: maroon;
+    
+}
+
+.chemin{
+    background-color: rgb(168, 157, 6);
+
+}
+
+.start{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+.perso{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-image: url(/pictures/player.jpg);
+    background-size: cover;
+    margin-top: 5px;
+    margin-left: 5px;
+
+}
+
+.tresor{
+    width: 40px;
+    height: 40px;
+    background:  url(/pictures/tresor.jpeg);
+    background-size: cover;
+    
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 520px;
+}
+
+.labyrinthe{
+    width:40px;
+    height:40px;
+    text-align: center;
+    border: 1px solid grey; 
+    box-sizing: border-box;
+}
