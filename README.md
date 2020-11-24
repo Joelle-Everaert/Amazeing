@@ -6,8 +6,8 @@
 * date
 
 ## What is this ?
-
-
+Creation of a maze in javascript.
+We had to start from a txt file with the route we followed
 
 
 ## Context  
@@ -20,7 +20,9 @@ Put into practice our knowledge learned during the training course.
 
 
 ## Languages used?
-* 
+* CSS
+* JS
+
 
 
 
