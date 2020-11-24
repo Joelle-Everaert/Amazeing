@@ -1,10 +1,19 @@
 .mur {
     background-color: maroon;
-    
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid grey; 
+    box-sizing: border-box;
 }
 
 .chemin{
     background-color: rgb(168, 157, 6);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid grey; 
+    box-sizing: border-box;
 
 }
 
@@ -32,16 +41,12 @@
     
 }
 
-main{
+/* main{
     display: flex;
     flex-wrap: wrap;
     width: 520px;
-}
+} */
 
 .labyrinthe{
-    width:40px;
-    height:40px;
-    text-align: center;
-    border: 1px solid grey; 
-    box-sizing: border-box;
+    display:flex;
 }
