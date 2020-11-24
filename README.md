@@ -6,7 +6,7 @@
 * date
 
 ## What is this ?
-Creation of a maze in javascript.
+Creation of a maze in javascript. </br>
 We had to start from a txt file with the route we followed
 
 
@@ -31,6 +31,7 @@ Put into practice our knowledge learned during the training course.
 
 [![little overview]()]()
 
+https://joelle-everaert.github.io/Amazeing/
 
 ### Original instruction
 
