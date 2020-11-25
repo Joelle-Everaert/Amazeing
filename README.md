@@ -8,7 +8,7 @@
 ## What is this ?
 Creation of a maze in javascript. </br>
 Move the mushroom using the arrows on your keyboard. </br>
-The goal of the game --> win of course BUT don't hesitate to lose (once at least :wink )
+The goal of the game --> win of course BUT don't hesitate to lose (once at least :wink: )
 
 
 
