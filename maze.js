@@ -84,6 +84,7 @@ for (let i = 0; i < mazeArray.length; i++) {
 }
 
 // ____________________________________________TIMER & IMAGE LOOSER__________________________________________
+
 const timer = document.createElement('div');
 timer.className = 'timer'
 const imageLooser = document.createElement('div');
@@ -101,17 +102,17 @@ setInterval(function () {
         // alert('YOU LOOSE!!')
         setTimeout(function(){   //effectue une action
             window.location=''
-         }, 5000);
+         }, 3000);
     }
 
 }, 1000);
 
 
-
-
 // ____________________________________________TIMER & IMAGE LOOSER________________________________________
 
-// definit position X et Y pour futur labyrinthe
+
+
+// ____________________________________DEFINIT POSITION X & Y POUR LVL SUIVANT________________________________
 let positionY = 0; // position verticale
 positionY += stockPositionY + 1 // creation stockposition en ligne 40
 let positionX = 0; // position horizontale
@@ -122,6 +123,7 @@ posY += stockTresorPositionY + 1 // (+1 car on doit faire +1 dans mon tableau --
 let posX = 0;
 posX += stockTresorPositionX + 1
 
+// ____________________________________DEFINIT POSITION X & Y POUR LVL SUIVANT________________________________
 
 let perso = document.createElement('div');
 perso.className = 'perso';
@@ -131,7 +133,7 @@ document.body.addEventListener('keydown', function (e) {
     console.log(e.code)
 })
 
-// Evenement sur les touches //
+//___________________________________________EVENT TOUCHE________________________________________________________
 const deplacement = document.addEventListener('keydown', function (e) {
 
     if (e.code == 'ArrowRight') {
@@ -179,7 +181,9 @@ const deplacement = document.addEventListener('keydown', function (e) {
     }
 
     if (document.querySelector("body > main > div:nth-child(" + posY + ") > div.tresor > div")) { // div.tresor 
-        alert('You Won Little Lucky Guy ! ')
+        const winner = document.createElement('img');
+        winner.className = 'winner';
+        main.appendChild(winner)
     }
 
 })
