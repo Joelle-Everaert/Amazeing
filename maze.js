@@ -1,5 +1,7 @@
 const main = document.querySelector('main');
 
+
+
 // _______________________________________level I__________________________________________________
 
 const multiline = `***********.*
@@ -39,17 +41,17 @@ const multiline = `***********.*
 // ********`
 // _________________________________________CODE______________________________________________________
 
-const ligneArray = multiline.split('\n');
-console.log(ligneArray)
+const mazeArray = multiline.split('\n');
+console.log(mazeArray)
 
-for (let i = 0; i < ligneArray.length; i++) {
+for (let i = 0; i < mazeArray.length; i++) {
     const ligne = document.createElement('div');
     ligne.className = 'labyrinthe'; // toutes mes lignes horizontales de mon labyrinthe
 
     // on demande la longueur de la ligne 0 qui correspond au nombre de caractere dans la ligne
-    for (let j = 0; j < ligneArray[0].length; j++) { // lis les caractere de la premiere ligne de multiline
+    for (let j = 0; j < mazeArray[0].length; j++) { // lis les caractere de la premiere ligne de multiline (donnera tjs la largeur de base)
         const tile = document.createElement('div');
-        const caracter = ligneArray[i]; // reprensente l'ensemble des caractères de  la ligne (j) de multiline
+        const caracter = mazeArray[i]; // reprensente l'ensemble des caractères de la ligne (j) de multiline
         tile.innerHTML = caracter[j]; // j represente chaque caractere d'une ligne
         ligne.appendChild(tile); // en un tour de i, je construis la premiere ligne avec j
         if (tile.innerHTML == '*') {
@@ -71,18 +73,35 @@ for (let i = 0; i < ligneArray.length; i++) {
         if (tile.innerHTML == 'T') {
             tile.className = 'tresor';
             tile.innerHTML = '';
+            stockTresorPositionX = caracter.indexOf('T');
+            console.log('caracter.indexOf(t) est egal à ', caracter.indexOf("T"));
+            stockTresorPositionY = i  // chaque ligne i = une ligne 
+            console.log(i)
         }
     }
 
     main.appendChild(ligne);
 }
 
-// definit position X et Y pour futur labyrinthe
+// ____________________________________________TIMER__________________________________________
+const timer = document.createElement('div');
+timer.className = 'timer'
+timer.innerHTML = 'test'
+main.appendChild(timer)
 
+
+// ____________________________________________TIMER________________________________________
+
+// definit position X et Y pour futur labyrinthe
 let positionY = 0; // position verticale
 positionY += stockPositionY + 1  // creation stockposition en ligne 40
 let positionX = 0; // position horizontale
 positionX += stockPositionX + 1  // 
+
+let posY = 0;
+posY += stockTresorPositionY + 1 // (+1 car on doit faire +1 dans mon tableau --> je sais pas pq mais sinon ca cale mal les div)
+let posX = 0;
+posX += stockTresorPositionX + 1
 
 
 let perso = document.createElement('div');
@@ -115,7 +134,7 @@ const deplacement = document.addEventListener('keydown', function (e) {
         }
     }
     if (e.code == 'ArrowDown') {
-        if (positionY <= ligneArray.length){   // evite msg erreurs console
+        if (positionY <= mazeArray.length){   // evite msg erreurs console
             positionY++
             if (document.querySelector("body > main > div:nth-child(" + positionY + ") > div:nth-child(" + positionX + ")").classList.contains('mur')) {
                 positionY--
@@ -139,8 +158,9 @@ const deplacement = document.addEventListener('keydown', function (e) {
 
         }
     }
-    if (document.querySelector("body > main > div:nth-child(2) > div.tresor > div")){
-        alert ('You Won Little Lucky Guy ! ')
+  
+        if (document.querySelector("body > main > div:nth-child(" + posY + ") > div.tresor > div")){  // div.tresor 
+            alert ('You Won Little Lucky Guy ! ')
     }
 
 })

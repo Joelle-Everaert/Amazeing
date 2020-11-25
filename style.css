@@ -41,12 +41,21 @@
     
 }
 
-/* main{
-    display: flex;
-    flex-wrap: wrap;
-    width: 520px;
-} */
-
 .labyrinthe{
     display:flex;
+    justify-content: center;
+}
+
+
+
+.timer{
+    background: #0f3854;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    background-size: 100%;
+    font-size: 1.5em;
+    text-align: center;
+    margin-left: 370px;
+    margin-right: 370px;
+    color:white;
+
 }
