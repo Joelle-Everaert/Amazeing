@@ -57,5 +57,14 @@
     margin-left: 370px;
     margin-right: 370px;
     color:white;
+}
 
+.imageLooser{
+    position: absolute;
+    background-size: contain;
+    width: 600px;
+    height: 600px;
+    left: 370px;
+    top: 0px;
+    background-image: url(./pictures/Champi.jpg);
 }

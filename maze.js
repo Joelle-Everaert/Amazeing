@@ -75,7 +75,7 @@ for (let i = 0; i < mazeArray.length; i++) {
             tile.innerHTML = '';
             stockTresorPositionX = caracter.indexOf('T');
             console.log('caracter.indexOf(t) est egal à ', caracter.indexOf("T"));
-            stockTresorPositionY = i  // chaque ligne i = une ligne 
+            stockTresorPositionY = i // chaque ligne i = une ligne 
             console.log(i)
         }
     }
@@ -83,20 +83,39 @@ for (let i = 0; i < mazeArray.length; i++) {
     main.appendChild(ligne);
 }
 
-// ____________________________________________TIMER__________________________________________
+// ____________________________________________TIMER & IMAGE LOOSER__________________________________________
 const timer = document.createElement('div');
 timer.className = 'timer'
-timer.innerHTML = 'test'
+const imageLooser = document.createElement('div');
+imageLooser.className = 'imageLooser'
 main.appendChild(timer)
 
 
-// ____________________________________________TIMER________________________________________
+let sec = 5;
+
+setInterval(function () {
+    sec--;
+    timer.innerHTML = sec + ' secondes '
+    if (sec == 0) {
+        main.appendChild(imageLooser)  ///affichage de l'image
+        // alert('YOU LOOSE!!')
+        setTimeout(function(){   //effectue une action
+            window.location=''
+         }, 5000);
+    }
+
+}, 1000);
+
+
+
+
+// ____________________________________________TIMER & IMAGE LOOSER________________________________________
 
 // definit position X et Y pour futur labyrinthe
 let positionY = 0; // position verticale
-positionY += stockPositionY + 1  // creation stockposition en ligne 40
+positionY += stockPositionY + 1 // creation stockposition en ligne 40
 let positionX = 0; // position horizontale
-positionX += stockPositionX + 1  // 
+positionX += stockPositionX + 1 // 
 
 let posY = 0;
 posY += stockTresorPositionY + 1 // (+1 car on doit faire +1 dans mon tableau --> je sais pas pq mais sinon ca cale mal les div)
@@ -134,7 +153,7 @@ const deplacement = document.addEventListener('keydown', function (e) {
         }
     }
     if (e.code == 'ArrowDown') {
-        if (positionY <= mazeArray.length){   // evite msg erreurs console
+        if (positionY <= mazeArray.length) { // evite msg erreurs console
             positionY++
             if (document.querySelector("body > main > div:nth-child(" + positionY + ") > div:nth-child(" + positionX + ")").classList.contains('mur')) {
                 positionY--
@@ -146,8 +165,8 @@ const deplacement = document.addEventListener('keydown', function (e) {
         }
     }
     if (e.code == 'ArrowUp') {
-        
-        if (positionY >= 1) {   // evite msg erreurs console
+
+        if (positionY >= 1) { // evite msg erreurs console
             positionY--
             if (document.querySelector("body > main > div:nth-child(" + positionY + ") > div:nth-child(" + positionX + ")").classList.contains('mur')) {
                 positionY++
@@ -158,9 +177,9 @@ const deplacement = document.addEventListener('keydown', function (e) {
 
         }
     }
-  
-        if (document.querySelector("body > main > div:nth-child(" + posY + ") > div.tresor > div")){  // div.tresor 
-            alert ('You Won Little Lucky Guy ! ')
+
+    if (document.querySelector("body > main > div:nth-child(" + posY + ") > div.tresor > div")) { // div.tresor 
+        alert('You Won Little Lucky Guy ! ')
     }
 
 })
