@@ -92,14 +92,14 @@ imageLooser.className = 'imageLooser'
 main.appendChild(timer)
 
 
-let sec = 5;
+let sec = 12;
 
-setInterval(function () {
+let interval = setInterval(function () {
     sec--;
     timer.innerHTML = sec + ' secondes '
     if (sec == 0) {
         main.appendChild(imageLooser)  ///affichage de l'image
-        // alert('YOU LOOSE!!')
+        clearInterval(interval)  
         setTimeout(function(){   //effectue une action
             window.location=''
          }, 3000);
@@ -181,9 +181,14 @@ const deplacement = document.addEventListener('keydown', function (e) {
     }
 
     if (document.querySelector("body > main > div:nth-child(" + posY + ") > div.tresor > div")) { // div.tresor 
+        // alert('You won !!')
         const winner = document.createElement('img');
         winner.className = 'winner';
         main.appendChild(winner)
+        clearInterval(interval)
+        setTimeout(function(){   //effectue une action
+            window.location=''
+         }, 2000);
     }
 
 })
