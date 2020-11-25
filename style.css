@@ -45,9 +45,9 @@
     justify-content: center;
 }
 
-
-
 .timer{
+    font-family: 'Nerko One', cursive;
+    margin-top: 10px;
     background: #0f3854;
     background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
     background-size: 100%;
@@ -56,6 +56,7 @@
     margin-left: 370px;
     margin-right: 370px;
     color:white;
+    border : ridge slategrey;
 }
 
 .imageLooser{
@@ -66,6 +67,7 @@
     left: 370px;
     top: 0px;
     background-image: url(./pictures/Champi.jpg);
+    border-radius: 30px;
 }
 
 .winner{
@@ -76,4 +78,6 @@
     left: 370px;
     top: 0px;
     background-image: url(./pictures/win.gif);
+    border-radius: 30px;
+    
 }
